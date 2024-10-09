@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import AmazonLogo from "../../components/AmazonLogo.astro";
 import { SHOW_BUY_BUTTON } from "astro:env/server";
 import BookScore from "../../components/BookScore.astro";
 import BuyBoton from "../../components/BuyBoton.astro";
@@ -16,7 +15,7 @@ export async function getStaticPaths() {
 
 const { book } = Astro.props;
 const { data, slug } = book;
-const { title, author, img, readmetime, description, buy } = data;
+const { title, img, buy } = data;
 
 const { Content } = await render(book);
 export const prerender = true;
